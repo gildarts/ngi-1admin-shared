@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "moe-course",
+			"path": "./projects/moe-course/src"
+		},
+		{
+			"name": "workspace",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
