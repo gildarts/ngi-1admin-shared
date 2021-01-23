@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "moe-course": {
+      "projectType": "library",
+      "root": "projects/moe-course",
+      "sourceRoot": "projects/moe-course/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/moe-course/tsconfig.lib.json",
+            "project": "projects/moe-course/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/moe-course/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/moe-course/src/test.ts",
+            "tsConfig": "projects/moe-course/tsconfig.spec.json",
+            "karmaConfig": "projects/moe-course/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/moe-course/tsconfig.lib.json",
+              "projects/moe-course/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nglib-moe-course"
