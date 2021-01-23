@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@1campus/jsonx": "^0.0.5",
     "@1campus/web-gadget": "^2.0.1",
     "@angular/animations": "~11.0.0",
     "@angular/common": "~11.0.0",

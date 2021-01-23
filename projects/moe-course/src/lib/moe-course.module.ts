@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { MoeCourseComponent } from './moe-course.component';
 import { WebGadgetModule } from '@1campus/web-gadget';
 import { CommonModule } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [MoeCourseComponent],
+  declarations: [],
   imports: [
     CommonModule,
+    HttpClientModule,
     WebGadgetModule
   ],
-  exports: [MoeCourseComponent]
+  exports: []
 })
 export class MoeCourseModule { }
