@@ -9,5 +9,9 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gildarts/ngi-1admin-shared.git"
   }
 }
