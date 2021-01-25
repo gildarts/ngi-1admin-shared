@@ -48,17 +48,4 @@ export class CourseCodeTable {
     }
 
   }
-
-  /** 合併兩個課程代碼表。 */
-  public static merge(...tables: CourseCodeTable[]) {
-    const combine: CourseCodeRecord[] = [];
-
-    tables.forEach(v => combine.push(...v.records));
-
-    const newTable = new CourseCodeTable([]);
-    newTable.records = combine;
-    newTable.generateMap();
-
-    return newTable;
-  }
 }

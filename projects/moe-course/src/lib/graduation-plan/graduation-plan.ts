@@ -46,6 +46,7 @@ export class GraduationPlan {
 
   /**
    * 取得與課程代碼表的差異資料。
+   * 應該分開學期比較。
    */
   public diff(courseTable: CourseCodeTable) {
     const changeset: DiffSubject[] = [];
