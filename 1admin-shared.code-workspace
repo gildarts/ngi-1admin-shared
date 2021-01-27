@@ -2,7 +2,7 @@
 	"folders": [
 		{
 			"name": "moe-course",
-			"path": "./projects/moe-course/src"
+			"path": "./projects/moe-course"
 		},
 		{
 			"name": "workspace",
