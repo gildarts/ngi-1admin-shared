@@ -50,18 +50,17 @@ export class UnifiedSubject {
     if(other.credits!.unifiedKey !== this.credits!.unifiedKey) {
       // 檢查學分數不同。
       diff.newCredits = other.credits!.clone();
-      isDiff = true;
-    }
 
-    if(other.domain !== this.domain) {
-      // 檢查領域不同。
-      diff.newDomain = other.domain;
-      isDiff = true;
-    }
+      if (other.domain !== this.domain) {
+        // 檢查領域不同。
+        diff.newDomain = other.domain;
+      }
 
-    if (other.entry !== this.entry) {
-      // 檢查分項類別不同。
-      diff.newEntry = other.entry;
+      if (other.entry !== this.entry) {
+        // 檢查分項類別不同。
+        diff.newEntry = other.entry;
+      }
+
       isDiff = true;
     }
 
