@@ -26,7 +26,6 @@ export class CreditSet {
       ['21', 2], ['22', 3],
       ['31', 4], ['32', 5],
     ]);
-
     this.credits[map.get(`${gradeYear}${semester}`)!] = credit;
   }
 
@@ -37,7 +36,9 @@ export class CreditSet {
 
   /** 取得可用來比較的字串。 */
   public get unifiedKey() {
-    return this.credits.join(':');
+    // 所有的 NaN 都換成 0，因為科目代碼表上並沒有 NaN 狀態。
+    // 為了一致都換成0來運算。
+    return this.credits.map(v => isNaN(v) ? 0 : v).join(':');
   }
 
   public clone() {
