@@ -1,7 +1,7 @@
 import { CodeField } from './code-line';
 import { MappingTable } from './mapping-table';
 import { CourseCode } from './course-code';
-import { ListName, MOEService } from './moe.service';
+import { CodeData, ListName, MOEService } from './moe.service';
 import { Injectable } from '@angular/core';
 import { Field } from './field';
 import { CourseCodeTable } from './course-code-table';
@@ -23,7 +23,8 @@ export class CourseCodeService {
   /** 取得指定的課程代碼表。 */
   public async getCourseCodeTable(groupCode: string): Promise<CourseCodeTable> {
     const sixteen = await this.moe.getCourseCodeTable(groupCode);
-    const cct = new CourseCodeTable(sixteen.Response.Code);
+    const codes = new Array<CodeData>().concat(sixteen?.Response?.Code || []);
+    const cct = new CourseCodeTable(codes);
 
     try {
       await this.applyDescription(cct.getCodesRef());
