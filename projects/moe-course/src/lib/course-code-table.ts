@@ -2,7 +2,7 @@ import { SubjectKey } from './common/subject-key';
 import { CreditSet } from './common/credit_set';
 import { CourseCode } from './common/course-code';
 import { CourseCodeRecord } from './common/course-code-record';
-import { CodeData } from './ng/moe.service';
+import { CourseCodeSpec } from './common/course-code-spec';
 
 /** 代表課程代碼前十六碼相同的所有科目清單。 */
 export class CourseCodeTable {
@@ -10,12 +10,15 @@ export class CourseCodeTable {
   private records: CourseCodeRecord[] = [];
   private recordMap = new Map<string, CourseCodeRecord>();
 
-  constructor(codes: CodeData[]) {
+  constructor(codes: CourseCodeSpec[]) {
     for (const code of codes) {
       const { course_code, subject_name, credits } = code;
+
       const record = new CourseCodeRecord(new CourseCode(course_code),
         subject_name,
-        CreditSet.parse(credits));
+        CreditSet.parse(credits),
+        code.exec_type,
+        code.attr);
 
       this.records.push(record);
     }
