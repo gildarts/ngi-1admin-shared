@@ -1,12 +1,12 @@
-import { CourseCodeRecord } from './../course-code-record';
-import { DiffSubject } from './../diff-subject';
+import { CourseCodeRecord } from '../common/course-code-record';
+import { DiffSubject } from '../common/diff-subject';
 import { CourseCodeTable } from './../course-code-table';
 import { Jsonx } from '@1campus/jsonx';
-import { SubjectKey } from '../subject-key';
+import { SubjectKey } from '../common/subject-key';
 import { SubjectGroup } from './subject-group';
-import { Required, RequiredBy} from './common';
+import { Required, RequiredBy} from '../common/consts';
 import { Subject } from './subject';
-import { UnifiedSubject } from '../unified-subject';
+import { UnifiedSubject } from '../common/unified-subject';
 
 /** 代表一個課程規劃表的所有內容。 */
 export class GraduationPlan {

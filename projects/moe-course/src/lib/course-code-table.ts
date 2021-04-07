@@ -1,8 +1,8 @@
-import { SubjectKey } from './subject-key';
-import { CreditSet } from './credit_set';
-import { CourseCode } from './course-code';
-import { CourseCodeRecord } from './course-code-record';
-import { CodeData } from './moe.service';
+import { SubjectKey } from './common/subject-key';
+import { CreditSet } from './common/credit_set';
+import { CourseCode } from './common/course-code';
+import { CourseCodeRecord } from './common/course-code-record';
+import { CodeData } from './ng/moe.service';
 
 /** 代表課程代碼前十六碼相同的所有科目清單。 */
 export class CourseCodeTable {

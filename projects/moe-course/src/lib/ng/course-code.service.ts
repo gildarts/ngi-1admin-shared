@@ -1,10 +1,10 @@
-import { CodeField } from './code-line';
-import { MappingTable } from './mapping-table';
-import { CourseCode } from './course-code';
+import { CodeField } from '../common/code-line';
+import { MappingTable } from '../common/mapping-table';
+import { CourseCode } from '../common/course-code';
 import { CodeData, ListName, MOEService } from './moe.service';
 import { Injectable } from '@angular/core';
-import { Field } from './field';
-import { CourseCodeTable } from './course-code-table';
+import { Field } from '../common/field';
+import { CourseCodeTable } from '../course-code-table';
 
 @Injectable({
   providedIn: 'root'

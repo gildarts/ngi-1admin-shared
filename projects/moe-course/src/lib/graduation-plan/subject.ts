@@ -1,4 +1,4 @@
-import { Required, RequiredBy } from './common';
+import { Required, RequiredBy } from '../common/consts';
 import { Jsonx } from '@1campus/jsonx';
 
 /** 代表單一學期的科目相關資訊。 */

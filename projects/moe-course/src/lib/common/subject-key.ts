@@ -1,4 +1,4 @@
-import { Required, RequiredBy } from './graduation-plan/common';
+import { Required, RequiredBy } from './consts';
 
 export class SubjectKey {
 

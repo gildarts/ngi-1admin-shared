@@ -8,11 +8,17 @@ import { CourseTypeMap } from './course-type-map';
 export class CourseCodeRecord implements ComparableSubject {
 
   constructor(
+    /** 課程代碼。 */
     public code: CourseCode,
+    /** 科目名稱。 */
     public readonly subjectName: string,
-    public credits: CreditSet
-  ) {
-  }
+    /** 學分數。 */
+    public credits: CreditSet,
+    /** 授課學期開課方式(2021 新規格)。 */
+    public execTypes?: string,
+    /** 課程屬性(2021 新規格)。 */
+    public attr?: string,
+  ) { }
 
   /** 取得一致化的科目資料，用來進行通用比對。 */
   public getUnifiedSubject() {

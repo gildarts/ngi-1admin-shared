@@ -1,4 +1,4 @@
-import { Required, RequiredBy } from './graduation-plan/common';
+import { Required, RequiredBy } from './consts';
 
 /** 課程類別對應課程規劃的分類。
  * https://3.basecamp.com/4399967/buckets/15765350/todos/3168819285

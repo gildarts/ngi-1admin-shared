@@ -1,7 +1,7 @@
 import { DiffSubject } from './diff-subject';
 import { SubjectKey } from './subject-key';
 import { CreditSet } from './credit_set';
-import { Required, RequiredBy } from './graduation-plan/common';
+import { Required, RequiredBy } from './consts';
 
 export interface ComparableSubject {
 

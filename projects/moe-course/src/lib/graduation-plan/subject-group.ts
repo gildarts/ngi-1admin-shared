@@ -1,9 +1,9 @@
 import { CourseCodeTable } from './../course-code-table';
-import { CourseCodeRecord } from './../course-code-record';
-import { CreditSet } from './../credit_set';
-import { ComparableSubject, UnifiedSubject } from './../unified-subject';
+import { CourseCodeRecord } from '../common/course-code-record';
+import { CreditSet } from '../common/credit_set';
+import { ComparableSubject, UnifiedSubject } from '../common/unified-subject';
 import { Subject } from './subject';
-import { SubjectKey } from '../subject-key';
+import { SubjectKey } from '../common/subject-key';
 
 /** 代表科目在所有學期的組成。 */
 export class SubjectGroup implements ComparableSubject {
