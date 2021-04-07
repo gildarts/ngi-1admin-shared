@@ -85,7 +85,8 @@ export class CourseCodeService {
       { name: ListCode.DEP, field: Field.N05, keyName: '代碼', valueName: '代碼說明' },
       { name: ListCode.CLA, field: Field.N06, keyName: '代碼', valueName: '代碼說明' },
       { name: ListCode.CAT, field: Field.N07, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListCode.MOD, field: Field.N08, keyName: '代碼', valueName: '代碼說明' },
+      // 開課方式在新規格是每學期可以不同，需另外處理。
+      // { name: ListCode.MOD, field: Field.N08, keyName: '代碼', valueName: '代碼說明' },
       { name: ListCode.ATT1, field: Field.N09, keyName: '代碼', valueName: '代碼說明' },
       { name: ListCode.FLD, field: Field.N10, keyName: '代碼', valueName: '代碼說明' },
     ]
