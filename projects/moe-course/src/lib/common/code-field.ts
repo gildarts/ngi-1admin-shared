@@ -3,7 +3,7 @@
 export type CodeField = { value: string, description: string };
 
 /** 代表一整組的課程代碼資料。 */
-export class CodeLine extends Array<CodeField> {
+export class CodeFields extends Array<CodeField> {
 }
 
 /** 課程代碼欄位對照。 */
