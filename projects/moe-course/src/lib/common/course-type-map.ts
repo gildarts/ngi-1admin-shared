@@ -14,10 +14,11 @@ export const CourseTypeMap = new Map<string | undefined, { required: Required, r
   ['8', { requiredBy: '校訂', required: '選修' }],
   ['9', { requiredBy: '校訂', required: '選修' }],
   ['A', { requiredBy: '校訂', required: '選修' }],
-  ['B', { requiredBy: '校訂', required: '選修' }],
-  ['C', { requiredBy: '校訂', required: '選修' }],
-  ['D', { requiredBy: '校訂', required: '選修' }],
-  ['E', { requiredBy: '校訂', required: '選修' }],
-  ['F', { requiredBy: '校訂', required: '選修' }],
+  // 以下在新規格被刪除了。
+  // ['B', { requiredBy: '校訂', required: '選修' }],
+  // ['C', { requiredBy: '校訂', required: '選修' }],
+  // ['D', { requiredBy: '校訂', required: '選修' }],
+  // ['E', { requiredBy: '校訂', required: '選修' }],
+  // ['F', { requiredBy: '校訂', required: '選修' }],
   [undefined, { requiredBy: '校訂', required: '選修' }],
 ]);
