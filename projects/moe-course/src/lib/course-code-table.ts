@@ -11,11 +11,12 @@ export class CourseCodeTable {
   private recordMap = new Map<string, CourseCodeRecord>();
 
   constructor(codes: CodeData[]) {
-    for(const code of codes) {
-      const {course_code, subject_name, credits} = code;
+    for (const code of codes) {
+      const { course_code, subject_name, credits } = code;
       const record = new CourseCodeRecord(new CourseCode(course_code),
-      subject_name,
-      CreditSet.parse(credits));
+        subject_name,
+        CreditSet.parse(credits));
+
       this.records.push(record);
     }
 
@@ -44,6 +45,7 @@ export class CourseCodeTable {
     this.recordMap.clear();
 
     for(const record of this) {
+      // 科目名稱、校部訂、必選修。
       this.recordMap.set(record.getUnifiedSubject().getUnifiedKey(), record);
     }
 

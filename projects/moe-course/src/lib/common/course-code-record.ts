@@ -1,7 +1,7 @@
 import { ComparableSubject, UnifiedSubject } from './unified-subject';
 import { CreditSet } from './credit_set';
 import { CourseCode } from './course-code';
-import { Field } from './field';
+import { Field } from './code-field';
 import { CourseTypeMap } from './course-type-map';
 
 /** 代表「全國高級中等學校 課程計畫平台」的課程代碼記錄。 */

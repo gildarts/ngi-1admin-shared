@@ -1,9 +1,9 @@
-import { CodeField } from '../common/code-line';
+import { CodeField } from '../common/code-field';
 import { MappingTable } from '../common/mapping-table';
 import { CourseCode } from '../common/course-code';
 import { CodeData, ListName, MOEService } from './moe.service';
 import { Injectable } from '@angular/core';
-import { Field } from '../common/field';
+import { Field } from '../common/code-field';
 import { CourseCodeTable } from '../course-code-table';
 
 @Injectable({

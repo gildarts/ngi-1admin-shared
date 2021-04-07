@@ -1,5 +1,5 @@
-import { CodeField, CodeLine } from './code-line';
-import { Field } from "./field";
+import { CodeField, CodeLine } from './code-field';
+import { Field } from './code-field';
 import { MappingTable } from './mapping-table';
 
 /** 代表「全國高級中等學校 課程計畫平台」的課程代碼，支援 for...of 取得所有欄位值。 */
