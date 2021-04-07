@@ -3,7 +3,7 @@ import { CourseCode } from "../common/course-code";
 import { MappingTable } from "../common/mapping-table";
 
 /** 套用課程代碼各欄位說明。 */
-export async function applyDescription(codeList: CourseCode[], mappingTables: Map<Field, MappingTable>) {
+export async function applyDescription(codeList: CourseCode[], mappingTables: Map<Field, MappingTable>, factor: string) {
 
     for (const code of codeList) {
         for (const field of [Field.N03,
@@ -19,7 +19,7 @@ export async function applyDescription(codeList: CourseCode[], mappingTables: Ma
 
             if (!map) continue;
 
-            code.setDescription(field, map);
+            code.setDescription(field, map, factor);
         }
     }
 }

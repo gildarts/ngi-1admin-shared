@@ -38,7 +38,7 @@ export class NodeTestComponent implements OnInit {
             mapcoll.set(arg.field, map);
         }
 
-        this.data = mapcoll.get(Field.N04)?.getDescription('11');
+        this.data = mapcoll.get(Field.N09)?.getDescription('A');
 
     }
 
