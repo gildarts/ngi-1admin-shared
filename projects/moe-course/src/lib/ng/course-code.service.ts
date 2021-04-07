@@ -1,10 +1,11 @@
 import { CodeField } from '../common/code-field';
 import { MappingTable } from '../common/mapping-table';
 import { CourseCode } from '../common/course-code';
-import { CodeData, ListName, MOEService } from './moe.service';
+import { CodeData, MOEService } from './moe.service';
 import { Injectable } from '@angular/core';
 import { Field } from '../common/code-field';
 import { CourseCodeTable } from '../course-code-table';
+import { ListCode } from '../common/list-code';
 
 @Injectable({
   providedIn: 'root'
@@ -79,14 +80,14 @@ export class CourseCodeService {
     this.tables = new Map<Field, MappingTable>();
 
     const argList = [
-      { name: ListName.SCH, field: Field.N03, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListName.GRP, field: Field.N04, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListName.DEP, field: Field.N05, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListName.CLA, field: Field.N06, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListName.CAT, field: Field.N07, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListName.MOD, field: Field.N08, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListName.ATT1, field: Field.N09, keyName: '代碼', valueName: '代碼說明' },
-      { name: ListName.FLD, field: Field.N10, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.SCH, field: Field.N03, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.GRP, field: Field.N04, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.DEP, field: Field.N05, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.CLA, field: Field.N06, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.CAT, field: Field.N07, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.MOD, field: Field.N08, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.ATT1, field: Field.N09, keyName: '代碼', valueName: '代碼說明' },
+      { name: ListCode.FLD, field: Field.N10, keyName: '代碼', valueName: '代碼說明' },
     ]
 
     for(const arg of argList) {
