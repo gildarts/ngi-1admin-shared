@@ -10,5 +10,5 @@ Run `ng build moe-course` to build the project. The build artifacts will be stor
 
 ## 發佈
 
-After building your library with `ng build moe-course`, go to the dist folder `cd dist/moe-course` and run `npm publish --access public`.
+After building your library with `ng build moe-course --prod`, go to the dist folder `cd dist/moe-course` and run `npm publish --access public`.
 
