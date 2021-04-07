@@ -1,13 +1,15 @@
-import { CodeField } from './code-field';
+import { CodeField, Field } from './code-field';
+
+export type MapCollection = Map<Field, MappingTable>;
 
 /** 代碼對照表。 */
 export class MappingTable {
 
   private map = new Map<string, string>();
 
-  constructor(keyName: string, valueName: string, data: any) {
+  constructor(keyName: string, valueName: string, data: any, factorName?: string) {
 
-    for(const code of data) {
+    for (const code of data) {
       this.map.set(code[keyName], code[valueName]);
     }
   }

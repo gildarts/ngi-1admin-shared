@@ -6,15 +6,16 @@ import { Injectable } from '@angular/core';
 import { Field } from '../common/code-field';
 import { CourseCodeTable } from '../course-code-table';
 import { ListCode } from '../common/list-code';
+import { MapCollection } from '../common/mapping-table';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseCodeService {
 
-  private tables: Map<Field, MappingTable> | null = null;
+  private tables: MapCollection | null = null;
 
-  private extTables = new  Map<Field, CodeField[]>();
+  private extTables = new Map<Field, CodeField[]>();
 
   constructor(
     private moe: MOEService
@@ -77,6 +78,7 @@ export class CourseCodeService {
   }
 
   private async loadTables() {
+
     this.tables = new Map<Field, MappingTable>();
 
     const argList = [

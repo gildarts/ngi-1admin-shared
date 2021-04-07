@@ -21,5 +21,6 @@
  export * from './lib/ng/moe.service';
  export * from './lib/common/subject-key';
  export * from './lib/common/unified-subject';
+ export * from './lib/common/list-code';
 
 export * from './lib/ng/moe-course.module';
