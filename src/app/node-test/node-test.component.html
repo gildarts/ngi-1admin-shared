@@ -1,2 +1,30 @@
-<p>node-test works!</p>
-<pre>{{data | json}}</pre>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Permancely</th>
+            <th>Dynamic</th>
+            <th>Subject</th>
+            <th>課程類型</th>
+            <th>群別</th>
+            <th>科別</th>
+            <th>班群</th>
+            <th>課程類別</th>
+            <th>科目屬性</th>
+            <th>領域名稱</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data" [ngClass]="{remove: item.remove, diff: item.permancely != item.dynamicely}">
+            <td>{{item.permancely}}</td>
+            <td>{{item.dynamicely}}</td>
+            <td>{{item.subject}}</td>
+            <td>{{item.course_type}}</td>
+            <td>{{item.big_group}}</td>
+            <td>{{item.dept}}</td>
+            <td>{{item.class_group}}</td>
+            <td>{{item.cat}}</td>
+            <td>{{item.att1}}</td>
+            <td>{{item.domain}}</td>
+        </tr>
+    </tbody>
+</table>

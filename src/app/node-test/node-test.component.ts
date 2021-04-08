@@ -11,8 +11,19 @@ import { CodeTables } from './code-tables';
     styleUrls: ['./node-test.component.scss']
 })
 export class NodeTestComponent implements OnInit {
-
-    data?: any[] = [];
+    data: {
+        subject: string,
+        course_type: string,
+        big_group: string,
+        dept: string,
+        class_group: string,
+        cat: string,
+        att1: string,
+        domain: string,    
+        permancely: string,
+        dynamicely: string,
+        remove: string,
+    }[] = [];
 
     constructor() { }
 
@@ -43,19 +54,28 @@ export class NodeTestComponent implements OnInit {
             ccTableList.push(ccTable);
         }
 
-        this.data?.push(ccTableList.length);
-        for(const cct of ccTableList) {
-            this.data?.push(cct.getCodes().length);
-        }
         for(const cct of ccTableList) {
             for(const cc of cct) {
-                // this.data?.push(`${cc.removeRequired ? '刪除:' + cc.code.getOriginCode(): ''}${cc.subjectName}`);
 
-                if(cc.code.getPermanentlyCode() == cc.code.getMergedCode()) {
-                    this.data!.push(`${cc.code.getPermanentlyCode()} => ${cc.code.getMergedCode()}`);
-                } else {
-                    this.data!.push(`不同!! => ${cc.code.getPermanentlyCode()} => ${cc.code.getMergedCode()}`);
+                const ccobj: any = {
+                    subject: cc.subjectName,
+                    course_type: cc.code.getDescription(Field.N03),
+                    big_group: cc.code.getDescription(Field.N04),
+                    dept: cc.code.getDescription(Field.N05),
+                    class_group: cc.code.getDescription(Field.N06),
+                    cat: cc.code.getDescription(Field.N07),
+                    att1: cc.code.getDescription(Field.N09),
+                    domain: cc.code.getDescription(Field.N10),
+                    permancely: cc.code.getPermanentlyCode(),
+                    dynamicely: cc.code.getMergedCode(),
+                    remove: cc.removeRequired,
+                };
+
+                if(cc.code.getPermanentlyCode() != cc.code.getMergedCode()) {
+                    ccobj.status = '不同!!!'
                 }
+
+                this.data!.push(ccobj);
             }
         }
     }
