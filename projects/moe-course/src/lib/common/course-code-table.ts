@@ -14,7 +14,7 @@ export class CourseCodeTable {
     for (const code of codes) {
       const { course_code, subject_name, credits } = code;
 
-      const record = new CourseCodeRecord(new CourseCode(course_code),
+      const record = new CourseCodeRecord(new CourseCode(course_code, code.attr),
         subject_name,
         CreditSet.parse(credits),
         code.exec_type,

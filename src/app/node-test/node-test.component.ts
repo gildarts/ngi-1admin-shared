@@ -49,7 +49,13 @@ export class NodeTestComponent implements OnInit {
         }
         for(const cct of ccTableList) {
             for(const cc of cct) {
-                this.data?.push(`${cc.removeRequired ? '刪除:' + cc.code.getFullCode(): ''}${cc.subjectName}`);
+                // this.data?.push(`${cc.removeRequired ? '刪除:' + cc.code.getOriginCode(): ''}${cc.subjectName}`);
+
+                if(cc.code.getPermanentlyCode() == cc.code.getMergedCode()) {
+                    this.data!.push(`${cc.code.getPermanentlyCode()} => ${cc.code.getMergedCode()}`);
+                } else {
+                    this.data!.push(`不同!! => ${cc.code.getPermanentlyCode()} => ${cc.code.getMergedCode()}`);
+                }
             }
         }
     }

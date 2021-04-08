@@ -8,7 +8,8 @@ export class CourseCode {
   private record: CodeFields;
 
   public constructor(
-    private code: string) {
+    private code: string,
+    public readonly attr?: string) {
 
     const Pattern = /^([\d\w]{3})([\d\w]{6})([\d\w]{1})([\d\w]{2})([\d\w]{3})([\d\w]{1})([\d\w]{1})([\d\w]{1})([\d\w]{1})([\d\w]{2})([\d\w]{2})$/igm;
     this.record = [];
@@ -24,6 +25,18 @@ export class CourseCode {
 
       this.record.push({ value: fields[idx], description: '' });
     }
+
+    if(attr) {
+      const AttrPattern = /^([\d\w]{1})([\d\w]{1})([\d\w]{2})$/igm;
+      const attrs = AttrPattern.exec(attr);
+
+      if (!attrs) { throw new Error(`Attr 規格不合：${attr}`); }
+
+      this.record[(7-1)] = { value: attrs[1], description: '' };
+      this.record[(9-1)] = { value: attrs[2], description: '' };
+      this.record[(10-1)] = { value: attrs[3], description: '' };
+    }
+    
   }
 
   [Symbol.iterator](): IterableIterator<CodeField> {
@@ -50,9 +63,14 @@ export class CourseCode {
     this.record[+field].description = map.getDescription(this.getCode(field), factor);
   }
 
-  /** 取得完整的課程代碼。 */
-  public getFullCode() {
+  /** 取得原始的完整課程代碼，在新規格不會更改。 */
+  public getPermanentlyCode() {
     return this.code;
+  }
+
+  /** 取得合併「課程屬性」之後的課程代碼。 */
+  public getMergedCode() {
+    return this.record.map(v => v.value).join('');
   }
 }
 
