@@ -10,7 +10,7 @@ export class CourseCodeTable {
   private records: CourseCodeRecord[] = [];
   private recordMap = new Map<string, CourseCodeRecord>();
 
-  constructor(codes: CourseCodeSpec[]) {
+  constructor(codes: CourseCodeSpec[], public readonly factor: string = '') {
     for (const code of codes) {
       const { course_code, subject_name, credits } = code;
 

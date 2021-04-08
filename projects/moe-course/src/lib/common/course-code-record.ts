@@ -20,6 +20,11 @@ export class CourseCodeRecord implements ComparableSubject {
     public attr?: string,
   ) { }
 
+  /** 是否需要刪除此科目。 */
+  public get removeRequired() {
+    return this.subjectName == '' && this.execTypes == '' && this.attr == '';
+  }
+
   /** 取得一致化的科目資料，用來進行通用比對。 */
   public getUnifiedSubject() {
     const us = new UnifiedSubject(this);

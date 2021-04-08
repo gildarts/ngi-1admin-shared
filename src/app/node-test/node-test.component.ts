@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseCode } from 'dist/moe-course/public-api';
 import { CourseCodeSpec } from 'projects/moe-course/src/lib/common/course-code-spec';
 import { applyDescription, parseMappings } from 'projects/moe-course/src/lib/node/apply-description';
-import { CourseCodeRecord, Field } from 'projects/moe-course/src/public-api';
+import { CourseCodeRecord, CourseCodeTable, Field, SubjectKey } from 'projects/moe-course/src/public-api';
 import { ApiResponse } from './api-response';
 import { CodeTables } from './code-tables';
 @Component({
@@ -12,21 +12,22 @@ import { CodeTables } from './code-tables';
 })
 export class NodeTestComponent implements OnInit {
 
-    data: any;
+    data?: any[] = [];
 
     constructor() { }
 
     ngOnInit(): void {
+        
+        const ccTableList:CourseCodeTable [] = [];
 
-        const mapcoll = parseMappings(CodeTables);
-        this.data = mapcoll.get(Field.N09)?.getDescription('B');
+        const charts = parseMappings(CodeTables);
 
         for(const ccFile of ApiResponse) {
             const factor = ccFile.課程類型;
-            const ccRecords: CourseCodeSpec[] = [];
-            
+            const ccSpecs: CourseCodeSpec[] = [];
+
             for (const ccData of ccFile.課程資料) {
-                ccRecords.push({
+                ccSpecs.push({
                     course_code: ccData.課程代碼,
                     credits: ccData.授課學期學分節數,
                     subject_name: ccData.科目名稱,
@@ -34,8 +35,22 @@ export class NodeTestComponent implements OnInit {
                     attr: ccData.課程屬性
                 });
             }
-            
-            
+
+            const ccTable = new CourseCodeTable(ccSpecs, factor);
+
+            applyDescription(ccTable.getCodesRef(), charts, factor);
+
+            ccTableList.push(ccTable);
+        }
+
+        this.data?.push(ccTableList.length);
+        for(const cct of ccTableList) {
+            this.data?.push(cct.getCodes().length);
+        }
+        for(const cct of ccTableList) {
+            for(const cc of cct) {
+                this.data?.push(`${cc.removeRequired ? '刪除:' + cc.code.getFullCode(): ''}${cc.subjectName}`);
+            }
         }
     }
 
