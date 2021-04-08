@@ -3,7 +3,12 @@ import { CourseCode } from "../common/course-code";
 import { ListCode } from "../common/list-code";
 import { MappingTable } from "../common/mapping-table";
 
-/** 套用課程代碼各欄位說明。 */
+/**
+ * 套用課程代碼各欄位說明。
+ * @param codeList 課程代碼清單。
+ * @param mappingTables 中文對照表。
+ * @param factor 適用的課程類型(學制)，一次限制只能一種，例如：H|S|V|M|C|E|F...。
+ */
 export async function applyDescription(codeList: CourseCode[], mappingTables: Map<Field, MappingTable>, factor: string) {
 
     for (const code of codeList) {
@@ -25,8 +30,13 @@ export async function applyDescription(codeList: CourseCode[], mappingTables: Ma
     }
 }
 
-/** 載入代碼對照表。 */
-export function loadMapCollection(codeTableRaw: { name: string, content: any }[]) {
+/**
+ * 解析代碼對照表清單。
+ * @param codeTableList 代碼對照表清單。
+ * @returns 
+ */
+export function parseMappings(codeTableList: { name: string, content: any }[]) {
+    // codeTableList.name 是 SCH、GRP 這類的字串。
 
     const argList = [
         { name: ListCode.SCH, field: Field.N03, keyName: '代碼', valueName: '代碼說明' },
@@ -40,7 +50,7 @@ export function loadMapCollection(codeTableRaw: { name: string, content: any }[]
         { name: ListCode.FLD, field: Field.N10, keyName: '代碼', valueName: '代碼說明', factorName: '適用課程類型' },
     ]
 
-    const mapraw: any = codeTableRaw.map(m => [m.name as string, m.content as any]);
+    const mapraw: any = codeTableList.map(m => [m.name as string, m.content as any]);
     const mapDatas = new Map<string, any>(mapraw);
 
     const mapcoll = new Map<Field, MappingTable>();

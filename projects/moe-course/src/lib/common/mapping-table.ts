@@ -43,7 +43,7 @@ export class MappingTable {
       }
     }
 
-    return '';
+    return cd[0].text; // 如果都沒找到就回傳第一個(最接近)的代碼。
   }
 
   /**
