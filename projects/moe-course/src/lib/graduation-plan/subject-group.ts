@@ -1,4 +1,4 @@
-import { CourseCodeTable } from './../course-code-table';
+import { CourseCodeTable } from '../common/course-code-table';
 import { CourseCodeRecord } from '../common/course-code-record';
 import { CreditSet } from '../common/credit_set';
 import { ComparableSubject, UnifiedSubject } from '../common/unified-subject';

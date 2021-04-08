@@ -9,7 +9,7 @@
  export * from './lib/graduation-plan/subject';
 
  /** 課程代碼相關 */
- export * from './lib/course-code-table';
+ export * from './lib/common/course-code-table';
  export * from './lib/common/code-field';
  export * from './lib/common/course-code-record';
  export * from './lib/ng/course-code.service';

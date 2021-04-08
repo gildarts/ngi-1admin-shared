@@ -1,6 +1,6 @@
 import { CourseCodeRecord } from '../common/course-code-record';
 import { DiffSubject } from '../common/diff-subject';
-import { CourseCodeTable } from './../course-code-table';
+import { CourseCodeTable } from '../common/course-code-table';
 import { Jsonx } from '@1campus/jsonx';
 import { SubjectKey } from '../common/subject-key';
 import { SubjectGroup } from './subject-group';
