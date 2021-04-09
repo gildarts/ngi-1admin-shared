@@ -1,6 +1,6 @@
 {
   "name": "@1campus/moe-course",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "peerDependencies": {
     "@1campus/jsonx": "^0.0.5"
   },
