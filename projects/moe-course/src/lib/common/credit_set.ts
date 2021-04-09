@@ -50,6 +50,7 @@ export class CreditSet {
   public static parse(credits: string) {
     const cs = new CreditSet();
 
+    // 學分對照表，依課程計劃平臺的規範。
     const map = new Map<string, number>([
       ['0', 0],
       ['1', 1],
@@ -58,12 +59,22 @@ export class CreditSet {
       ['4', 4],
       ['5', 5],
       ['6', 6],
+      ['7', 7],
+      ['8', 8],
+      ['9', 9],
       ['A', 1],
       ['B', 2],
       ['C', 3],
       ['D', 4],
       ['E', 5],
       ['F', 6],
+      ['G', 7],
+      ['H', 8],
+      ['I', 9],
+      ['R', 10],
+      ['S', 11],
+      ['T', 12],
+      ['Z', 0], // 有開課 0 學分。
     ]);
 
     const line = credits.toUpperCase();

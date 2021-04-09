@@ -59,7 +59,7 @@ export class CourseCode {
   }
 
   /** 設定代碼中文說明。 */
-  public setDescription(field: Field, map: MappingTable, factor: string): void {
+  public setDescription(field: Field, map: MappingTable, factor?: string): void {
     this.record[+field].description = map.getDescription(this.getCode(field), factor);
   }
 
