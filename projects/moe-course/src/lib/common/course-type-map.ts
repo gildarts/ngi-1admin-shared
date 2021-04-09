@@ -1,6 +1,6 @@
 import { Required, RequiredBy } from './consts';
 
-/** 課程類別對應課程規劃的分類。
+/** 課程類別對應課程規劃的分類。(對應「7_課程類別」)
  * https://3.basecamp.com/4399967/buckets/15765350/todos/3168819285
 */
 export const CourseTypeMap = new Map<string | undefined, { required: Required, requiredBy: RequiredBy }>([
