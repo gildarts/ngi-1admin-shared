@@ -12,4 +12,4 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   exports: []
 })
-export class MoeCourseModule { }
+export class MoecourseNgModule { }

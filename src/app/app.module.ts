@@ -1,4 +1,4 @@
-import { MoeCourseModule } from '../../projects/moe-course/src/lib/ng/moe-course.module';
+import { MoecourseNgModule } from '../../projects/moe-course-ng/src/lib/moe-course-ng.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,7 +16,7 @@ import { CoursePlanCompareComponent } from './course-plan-compare/course-plan-co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MoeCourseModule,
+    MoecourseNgModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

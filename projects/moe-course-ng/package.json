@@ -1,0 +1,13 @@
+{
+  "name": "@1campus/moe-course-ng",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.9",
+    "@angular/core": "^11.0.9",
+    "@1campus/web-gadget": "^2.0.1",
+    "@1campus/jsonx": "^0.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

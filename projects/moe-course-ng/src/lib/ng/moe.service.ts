@@ -1,7 +1,7 @@
 import { GadgetService } from '@1campus/web-gadget';
  import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ListCode } from '../common/list-code';
+import { ListCode } from 'moe-course';
 
 @Injectable({
   providedIn: 'root'

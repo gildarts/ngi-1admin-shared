@@ -4,7 +4,6 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "@1campus/web-gadget": "1campus.web-gadget",
       "@1campus/jsonx": "1campus.jsonx"
     }
   }

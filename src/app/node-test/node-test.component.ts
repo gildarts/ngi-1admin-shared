@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseCode } from 'dist/moe-course/public-api';
 import { CourseCodeSpec } from 'projects/moe-course/src/lib/common/course-code-spec';
 import { applyDescription, parseMappings } from 'projects/moe-course/src/lib/node/helper-functions';
-import { CourseCodeRecord, CourseCodeTable, Field, SubjectKey } from 'projects/moe-course/src/public-api';
+import { CourseCodeTable, Field } from 'projects/moe-course/src/public-api';
 import { ApiResponse } from './api-response';
 import { CodeTables } from './code-tables';
 @Component({

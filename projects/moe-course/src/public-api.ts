@@ -9,8 +9,6 @@ export * from './lib/graduation-plan/subject-group';
 export * from './lib/graduation-plan/subject';
 
 /** 課程代碼相關 */
-export * from './lib/ng/course-code.service';
-export * from './lib/ng/moe.service';
 export * from './lib/node/helper-functions';
 export * from './lib/common/course-code-table';
 export * from './lib/common/code-field';
@@ -23,5 +21,3 @@ export * from './lib/common/mapping-table';
 export * from './lib/common/subject-key';
 export * from './lib/common/unified-subject';
 export * from './lib/common/list-code';
-
-export * from './lib/ng/moe-course.module';

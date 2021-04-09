@@ -5,6 +5,10 @@
 			"path": "./projects/moe-course"
 		},
 		{
+			"name": "moe-course-ng",
+			"path": "./projects/moe-course-ng"
+		},
+		{
 			"name": "workspace",
 			"path": "."
 		}

@@ -26,6 +26,10 @@
       "moe-course": [
         "dist/moe-course/moe-course",
         "dist/moe-course"
+      ],
+      "moe-course-ng": [
+        "dist/moe-course-ng/moe-course-ng",
+        "dist/moe-course-ng"
       ]
     }
   },
