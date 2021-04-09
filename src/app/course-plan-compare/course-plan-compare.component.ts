@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseCodeService, DiffSubject, GraduationPlan, MOEService } from 'projects/moe-course/src/public-api';
+import { DiffSubject, GraduationPlan } from 'moe-course';
+import { CourseCodeService } from 'moe-course-ng';
 
 @Component({
   selector: 'app-course-plan-compare',

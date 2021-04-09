@@ -21,3 +21,4 @@ export * from './lib/common/mapping-table';
 export * from './lib/common/subject-key';
 export * from './lib/common/unified-subject';
 export * from './lib/common/list-code';
+export * from './lib/common/course-code-spec';
