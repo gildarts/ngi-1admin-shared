@@ -63,6 +63,11 @@ export class CourseCode {
     this.record[+field].description = map.getDescription(this.getCode(field), factor);
   }
 
+  /** 直接設定代碼中文說明。 */
+  public setDescriptionDirect(field: Field, desc: string) {
+    this.record[+field].description = desc;
+  }
+
   /** 取得原始的完整課程代碼，在新規格不會更改。 */
   public getPermanentlyCode() {
     return this.code;

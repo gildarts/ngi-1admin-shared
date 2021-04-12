@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseCodeSpec } from 'moe-course';
-import { applyDescription, parseMappings } from 'moe-course';
-import { CourseCodeTable, Field } from 'moe-course';
+import { applyDescription, CourseCodeSpec, CourseCodeTable, Field, GroupName, parseMappings } from 'projects/moe-course/src/public-api';
 import { ApiResponse } from './api-response';
 import { CodeTables } from './code-tables';
+import { GroupNameChart } from './group-name-chart';
 @Component({
     selector: 'app-node-test',
     templateUrl: './node-test.component.html',
@@ -31,6 +30,7 @@ export class NodeTestComponent implements OnInit {
         const ccTableList:CourseCodeTable [] = [];
 
         const charts = parseMappings(CodeTables);
+        const groupCharts = new GroupName(GroupNameChart);
 
         for(const ccFile of ApiResponse) {
             const factor = ccFile.課程類型;
@@ -48,7 +48,9 @@ export class NodeTestComponent implements OnInit {
 
             const ccTable = new CourseCodeTable(ccSpecs, factor);
 
-            applyDescription(ccTable.getCodesRef(), charts, factor);
+            const codesRef = ccTable.getCodesRef();
+            applyDescription(codesRef, charts, factor);
+            codesRef.forEach(v => groupCharts.applyDescription(v));
 
             ccTableList.push(ccTable);
         }
