@@ -1,12 +1,19 @@
 
 export type SemesterList = 1 | 2 | 3 | 4 | 5 | 6;
 
+export interface Credit {
+  /** 學分數 */
+  val: number;
+  /** 原始資料，0/無授課、Z/有授課，0學分、A ~ I / 1 ~ 9 學分對開、R ~ T / 10 ~ 12 學分*/
+  origin?: string;
+};
+
 /**
  * 代表所有學期的學分數。
  */
 export class CreditSet {
 
-  private credits: number[] = [NaN, NaN, NaN, NaN, NaN, NaN];
+  private credits: Credit[] = [{ val: NaN }, { val: NaN }, { val: NaN }, { val: NaN }, { val: NaN }, { val: NaN }];
 
   constructor() {
   }
@@ -17,7 +24,7 @@ export class CreditSet {
 
   /** 設定指定學期的學分數。 */
   public set(semester: SemesterList, credit: number) {
-    this.credits[semester - 1] = credit;
+    this.credits[semester - 1] = { val: credit, origin: credit + '' };
   }
 
   public setByGradeYear(gradeYear: number, semester: number, credit: number) {
@@ -26,7 +33,7 @@ export class CreditSet {
       ['21', 2], ['22', 3],
       ['31', 4], ['32', 5],
     ]);
-    this.credits[map.get(`${gradeYear}${semester}`)!] = credit;
+    this.credits[map.get(`${gradeYear}${semester}`)!] = { val: credit, origin: credit + '' };
   }
 
   /** 取得指定學期的學分數。 */
@@ -38,7 +45,11 @@ export class CreditSet {
   public get unifiedKey() {
     // 所有的 NaN 都換成 0，因為科目代碼表上並沒有 NaN 狀態。
     // 為了一致都換成0來運算。
-    return this.credits.map(v => isNaN(v) ? 0 : v).join(':');
+    return this.credits.map(v => isNaN(v.val) ? 0 : v.origin).join(':');
+  }
+
+  public toString(splitter: string = '') {
+    return this.credits.map(v => isNaN(v.val) ? 0 : v.origin).join(splitter);
   }
 
   public clone() {
@@ -84,7 +95,7 @@ export class CreditSet {
       if(!credit) continue;
 
       if(map.has(credit)) {
-        cs.credits[i] = map.get(credit)!;
+        cs.credits[i] = { val: map.get(credit)!, origin: credit };
       }
     }
 
