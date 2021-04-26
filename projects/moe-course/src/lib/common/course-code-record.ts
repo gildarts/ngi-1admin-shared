@@ -29,7 +29,12 @@ export class CourseCodeRecord implements ComparableSubject {
   public getUnifiedSubject() {
     const us = new UnifiedSubject(this);
 
-    const { required, requiredBy } = CourseTypeMap.get(this.code.getCode(Field.N07))!;
+    const n07 = this.code.getCode(Field.N07);
+    if ([''].indexOf(n07) >= 0) {
+      console.log(`有科目超出規格N07：${n07}(${this.code.getPermanentlyCode()})`);
+    }
+
+    const { required, requiredBy } = CourseTypeMap.get(n07)!;
     us.subjectName = this.subjectName;
     us.credits = this.credits.clone();
     us.required = required;
