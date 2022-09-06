@@ -17,7 +17,7 @@ export class NodeTestComponent implements OnInit {
         class_group: string,
         cat: string,
         att1: string,
-        domain: string,    
+        domain: string,
         permancely: string,
         dynamicely: string,
         remove: string,
@@ -26,7 +26,7 @@ export class NodeTestComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        
+
         const ccTableList:CourseCodeTable [] = [];
 
         const charts = parseMappings(CodeTables);
